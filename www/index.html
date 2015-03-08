@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr" ng-app="ToucApp">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="img/favicon.png" />
+        <title>the touc project</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+<body>
+<div ng-controller="MainCtrl">
+    <section class="inscription" ng-show="page=='new_user'">
+        <h1>{{title}}</h1>
+        <input type="text" ng-model="name" placeholder="Enter your name">
+        <p class="intro" ng-show="name!='you' && name.length > 3">well, {{name}}, if you are ready let's go !</p>
+        <button ng-show="name!='you' && name.length > 3" ng-click="user=name; console.log('oh')">begin</button>
+    </section>
+   
+    <section ng-click="touch($event);" class="game" ng-show="page=='game'" ng-click="touc=true" hm-drag-left="page='achievements'; clear()">
+        <h1>Touc :</h1>
+    </section>
+   
+    <section ng-show="page=='achievements'" class="achievements" ng-click="touc=true" ng-swipe-right="page='game'">
+        <h1>Achievements :</h1>
+        <div class="success_list">
+            <div class="success {{success.completed}}"  ng-repeat="success in success_list | orderBy : completed : reverse" style="transition-delay: {{$index * 50}}ms;">
+                {{success.name}}
+            </div>
+        </div>
+    </section>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-touch.js"></script>
+<script src="js/hammer.js"></script>
+<script src="js/gestures.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+</body>
+</html>

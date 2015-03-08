@@ -1,0 +1,299 @@
+html{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height: auto;
+    font-family: "Flex",Arial;
+    background-color: rgb(255, 186, 0);
+    color: #fff;
+    overflow: hidden;
+    
+}
+
+@font-face {
+    font-family: 'Flex';
+    src:url("../font/FlexDisplay-Thin.otf");
+}
+
+body{
+    position: relative;
+    margin: 0;
+    padding:0;
+    width: 100%;
+    height:100%;
+    font-size: 24px;
+    box-sizing: border-box;
+    opacity: 1;
+    animation:1s intro ease;
+    -webkit-animation:1s intro ease;
+    text-transform: lowercase;
+    -webkit-user-select: none;
+    user-select: none;
+}
+@keyframes intro{
+    0%{opacity: 0;margin-top: 0;}
+    30%{margin-top: 10%;}
+    100%{opacity: 1;margin-top: 0;}
+}
+@-webkit-keyframes intro {
+    0%{opacity: 0;margin-top: 0;}
+    30%{margin-top: 10%;}
+    100%{opacity: 1;margin-top: 0;}
+}
+.ng-scope{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+input{
+    position: relative;
+    margin: auto;
+    border:none;
+    background-color: rgba(255,255,255,0.5);
+    display: block;
+    line-height: 26px;
+    font-size: 24px;
+    padding: 2%;
+    width: 80%;
+    box-sizing: border-box;
+    color: #fff;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    perspective:500;
+    transform: rotateX(0deg);
+}
+
+input:focus{
+    background-color: rgba(255,255,255,0.8);
+    color: rgb(255, 186, 0);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    outline:none;
+    width: 100%;
+    box-shadow: 0 0 5% #fff;
+    transform: rotateX(360deg);
+    
+}
+
+button{
+    border:none;
+    background-color: rgba(255,255,255,0.9);
+    display: block;
+    line-height: 26px;
+    font-size: 26px;
+    padding: 3%;
+    width: 100%;
+    box-sizing: border-box;
+    color: rgb(255, 186, 0);
+}
+
+button:hover{
+    background-color: rgb(255, 186, 0);
+    color: #fff;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    outline:none;
+    width: 110%;
+    margin-left: -5%;
+    margin-right: -5%;
+}
+
+
+
+.intro{ 
+    opacity: 1;
+    height: 1px;
+    transition: all 0.5s ease;
+    height: 50px;
+    text-align: center;
+}
+.intro.ng-hide-remove{ 
+    animation:2s appear ease;
+    -webkit-animation:2s appear ease;
+    opacity: 1;
+    transition: all 0.5s ease;
+    height: auto;
+}
+
+@keyframes appear {
+    0%{opacity: 0; height: 0;}
+    100%{opacity: 1; height: 50px;}
+}
+@-webkit-keyframes appear {
+    0%{opacity: 0; height: 0;}
+    100%{opacity: 1; height: 50px;}
+}
+
+
+.game, .inscription{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.achievements{
+    position: absolute;
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.game{
+    background-color: #ffa701;
+}
+.achievements.ng-hide-remove{ 
+    animation:0.5s slideLeft ease;
+    -webkit-animation:0.5s slideLeft ease;
+}
+
+.game.ng-hide-remove{ 
+    animation:0.5s slideRight ease;
+    -webkit-animation:0.5s slideRight ease;
+}
+
+.inscription.ng-hide-add{ 
+    animation:1s slideAppear ease;
+    background-color: red;
+}
+.inscription.ng-hide-add{ 
+    -webkit-animation:1s slideAppear ease;
+    background-color: red;
+}
+
+
+@keyframes slideLeft {
+    0%{opacity: 0; left:100%;}
+    70%{opacity: 1; left:-5%;}
+    100%{opacity: 1; left:0;}
+}
+@-webkit-keyframes slideLeft {
+    0%{opacity: 0; left:100%;}
+    70%{opacity: 1; left:-5%;}
+    100%{opacity: 1; left:0;}
+}
+@keyframes slideRight {
+    0%{opacity: 0; right:100%;}
+    70%{opacity: 1; right:-5%;}
+    100%{opacity: 1; right:0;}
+}
+@-webkit-keyframes slideRight {
+    0%{opacity: 0; right:100%;}
+    70%{opacity: 1; right:-5%;}
+    100%{opacity: 1; right:0;}
+}
+@keyframes slideDisappear {
+    0%{opacity: 1; left:0;}
+    100%{opacity: 0; left:-100%;}
+}
+
+.success_list{
+    position: relative;
+    width: 100%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.success{
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,0.3);
+    margin: 1%;
+    width: 48%;
+    height: 100px;
+    float: left;
+    transition:1s;
+    transition: transform: 0.2s ease;
+    transform: rotateX(0deg);
+}
+
+.success:hover{
+    transition: all 1s ease;
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    background-color: rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px #fff;
+}
+
+.success.true{
+    background-color: rgba(255,255,255,0.8);
+    color: rgb(255, 186, 0);
+}
+.success.true:after{
+    content: "Completed !";
+    color: rgb(255, 186, 0);
+    font-size: 0.8em;
+}
+/*.success.true:hover:after{
+    content: "03/05/2015";
+    color: rgb(255, 186, 0);
+    font-size: 0.8em;
+}*/
+
+.success.ng-enter.ng-enter-active, .success.ng-leave {
+  opacity: 1;
+  margin: 1%;
+  width: 48%;
+}
+.success.ng-leave.ng-leave-active, .success.ng-enter {
+  opacity: 0;
+  margin: 20%;
+  width: 10%;
+}
+
+
+.simple_touc0{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #fff;
+    animation: pouf 2s ease;
+    -webkit-animation: pouf 2s ease;
+    opacity: 0;
+}
+
+.simple_touc{
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #f3f;
+    -webkit-animation: pouf 2s ease;
+    animation: pouf 2s ease;
+    opacity: 0;
+}
+.simple_touc2{
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #ff3;
+    -webkit-animation: pouf 2s ease;
+    animation: pouf 2s ease;
+    opacity: 0;
+}
+
+@keyframes pouf {
+	    0% {opacity: 0; box-shadow: 0 0 0 #fff; border-radius:50px;}
+	    10% {opacity: 1; box-shadow: 0 0 50px #fff;}
+	    100% {opacity: 0; box-shadow: 0 0 5px #fff; border-radius:250px;-webkit-transform:scale(10);transform:scale(10);}
+	}
+@-webkit-keyframes pouf {
+	    0% {opacity: 0; box-shadow: 0 0 0 #fff; border-radius:50px;}
+	    10% {opacity: 1; box-shadow: 0 0 50px #fff;}
+	    100% {opacity: 0; box-shadow: 0 0 5px #fff;border-radius:250px;-webkit-transform:scale(10);transform:scale(10);}
+	}
