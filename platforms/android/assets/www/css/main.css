@@ -31,6 +31,11 @@ body{
     -webkit-user-select: none;
     user-select: none;
 }
+
+h1{
+    
+}
+
 @keyframes intro{
     0%{opacity: 0;margin-top: 0;}
     30%{margin-top: 10%;}
@@ -209,11 +214,12 @@ button:hover{
     background-color: rgba(255,255,255,0.3);
     margin: 1%;
     width: 48%;
-    height: 100px;
+    height: 150px;
     float: left;
     transition:1s;
     transition: transform: 0.2s ease;
     transform: rotateX(0deg);
+    color: rgba(0,0,0,0);
 }
 
 .success:hover{
@@ -222,6 +228,14 @@ button:hover{
     -webkit-transform: rotateX(360deg);
     background-color: rgba(255,255,255,0.1);
     box-shadow: 0 0 20px #fff;
+}
+.success.false:before{
+    content: " ?";
+    color: #fff;
+    font-size: 0.8em;
+    font-size: 40px;
+    text-align: center;
+    display: block;
 }
 
 .success.true{
@@ -297,3 +311,49 @@ button:hover{
 	    10% {opacity: 1; box-shadow: 0 0 50px #fff;}
 	    100% {opacity: 0; box-shadow: 0 0 5px #fff;border-radius:250px;-webkit-transform:scale(10);transform:scale(10);}
 	}
+@keyframes tadaa {
+	    0% {opacity: 0; box-shadow: 0 0 0 #fff; border-radius:250px;transform:scale(10); transform: rotate(120deg); }
+	    15% {opacity: 1; box-shadow: 0 0 50px #fff;transform:scale(1);transform:rotate(-10deg);}
+        90% {opacity: 1; box-shadow: 0 0 50px #fff;transform:scale(1.1);}
+	    100% {opacity: 0; box-shadow: 0 0 5px #fff; border-radius:250px;transform:scale(10);}
+	}
+@-webkit-keyframes tadaa {
+	    0% {padding-top: 20%;height: 300px;opacity: 0; box-shadow: 0 0 0 #fff; border-radius:250px; -webkit-transform:scale(10);}
+        3% {padding-top: 20%;height: 300px;opacity: 0; box-shadow: 0 0 0 #fff; border-radius:250px; -webkit-transform:scale(10);}
+        12% {padding-top: 20%;height: 300px;opacity: 1; box-shadow: 0 0 50px #fff;-webkit-transform:scale(0.5); }
+	    25% {padding-top: 20%;height: 300px;opacity: 1; box-shadow: 0 0 50px #fff;-webkit-transform:scale(1); }
+        90% {padding-top: 20%;height: 300px;opacity: 1; box-shadow: 0 0 50px #fff;-webkit-transform:scale(1.1);}
+	    100% {padding-top: 20%;height: 300px;opacity: 0; box-shadow: 0 0 5px #fff;border-radius:250px;-webkit-transform:scale(10);}
+	}
+
+
+.achievement_unlock{
+    opacity: 0;
+    display: block;
+    position: relative;
+    text-align: center;
+    margin:auto;
+    padding-top: 0;
+    vertical-align: center;
+    width: 300px;
+    height: 300px;
+    background-color: #00c6ce;
+    background: -webkit-linear-gradient(#00c6ce, rgb(255, 186, 0));
+    color: #fff;
+    border-radius:50%;
+    box-sizing: border-box;
+    font-size: 36px;
+     -webkit-animation: tadaa 3s ease;
+     animation: tadaa 4s ease;
+    height: 0;
+}
+/*
+.achievement_unlock:hover{
+    opacity: 0;
+    position: absolute;
+    height: 0;
+    bottom:0;
+}*/
+.achievement_unlock span{
+    font-size: 0.5em;
+}

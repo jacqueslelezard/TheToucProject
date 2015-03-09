@@ -17,24 +17,25 @@
         <button ng-show="name!='you' && name.length > 3" ng-click="user=name; console.log('oh')">begin</button>
     </section>
    
-    <section ng-click="touch($event);" class="game" ng-show="page=='game'" ng-click="touc=true" hm-drag-left="page='achievements'; clear()">
-        <h1>Touc :</h1>
+    <section class="game" ng-show="page=='game'"  ng-click="touch($event);touc=true; nb_touc=nb_touc+1;"  hm-rotate="rotate()"; hm-pinch-in="pinchin()"; hm-hold="press()" hm-manager-options='{"holdThreshold": 2000, "holdTimeout": 5000, "hold": false}'>
+        <h1  hm-drag-left="page='achievements'; clear()";>Touc :</h1>
+        <!--<div class="achievement_unlock">Achievement<br/> unlock !!!</div>-->
     </section>
    
-    <section ng-show="page=='achievements'" class="achievements" ng-click="touc=true" ng-swipe-right="page='game'">
-        <h1>Achievements :</h1>
+    <section ng-show="page=='achievements'" class="achievements" ng-click="touc=true" >
+        <h1 hm-drag-right="page='game'">Achievements :</h1>
         <div class="success_list">
             <div class="success {{success.completed}}"  ng-repeat="success in success_list | orderBy : completed : reverse" style="transition-delay: {{$index * 50}}ms;">
                 {{success.name}}
             </div>
         </div>
-    </section>
+    </section> 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-touch.js"></script>
-<script src="js/gestures.js"></script>
-<script src="js/hammer.js"></script>
+<script src="js/shake.js"></script>
+<script src="js/gestures2.js"></script>
 <script src="js/app.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 </body>

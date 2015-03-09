@@ -1,0 +1,15 @@
+{
+    "uk.co.ilee.shake": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/leecrossley/cordova-plugin-shake-detection.git",
+            "subdir": "."
+        }
+    },
+    "org.apache.cordova.device-motion": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device-motion"
+        }
+    }
+}
